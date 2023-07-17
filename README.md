@@ -3,8 +3,6 @@
 Description :
     This project is written in C++ and is based on the learning book "Apprennez le langage c++". 
     The exercise was to create a class named "Zfraction" that could take 0, 1, or 2 arguments and react accordingly to create a fraction in the following form: "4/5".
-
-
     In addition, I had to create operator overloading methods to display the attributes of my class and perform arithmetic/logical operations between objects.
 
 
