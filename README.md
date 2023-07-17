@@ -24,4 +24,4 @@ This project consists of 4 files:
 
 ## Creation Time
 
-Approximately 5 hours.
+Approximately 3 hours.
