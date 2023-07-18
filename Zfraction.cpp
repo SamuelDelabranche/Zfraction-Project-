@@ -108,3 +108,7 @@ void Zfraction::numerateur() const{
 void Zfraction::denominateur() const{
     cout << this->m_denominateur; 
 }
+double Zfraction::nombreReel() const{
+    double copie(this->m_numerateur);
+    return copie/=this->m_denominateur;
+}

@@ -21,5 +21,8 @@ int main(){
         cout << "a est plus petit que b" << endl;
     }
 
+    cout << a << " = " << a.nombreReel() << endl;
+    cout << b << " = " << b.nombreReel() << endl;
+
     cin.ignore();
 }
