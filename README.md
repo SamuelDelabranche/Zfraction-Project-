@@ -12,6 +12,7 @@ In addition, I had to create operator overloading methods to display the attribu
 - References
 - Classes (Attributes, methods, etc.)
 - Variable manipulation
+- Function comments
 
 ## Components
 
