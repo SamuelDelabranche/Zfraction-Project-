@@ -33,6 +33,7 @@ class Zfraction{
     // Ajout annexes
         void numerateur() const;
         void denominateur() const;
+        double nombreReel() const; // convertit la fraction (objet) en nombre reel
     
 
     private:

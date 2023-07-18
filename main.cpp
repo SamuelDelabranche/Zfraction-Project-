@@ -21,5 +21,8 @@ int main(){
         cout << "a est plus petit que b" << endl;
     }
 
+    cout << "Convertion nombre reel (a): " << a.nombreReel() << endl;
+    cout << "Convertion nombre reel (b): " << b.nombreReel() << endl;
+
     cin.ignore();
 }
