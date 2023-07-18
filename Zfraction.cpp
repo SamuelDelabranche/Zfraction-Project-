@@ -100,3 +100,11 @@ bool Zfraction::estEgal(Zfraction const &objet2) const{
     if(this->m_numerateur == objet2.m_numerateur && this->m_denominateur == objet2.m_denominateur){return true;}
     else{return false;}
 }
+
+// Ajout annexes
+void Zfraction::numerateur() const{
+    cout << this->m_numerateur; 
+}
+void Zfraction::denominateur() const{
+    cout << this->m_denominateur; 
+}
