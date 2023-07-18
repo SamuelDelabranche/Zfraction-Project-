@@ -17,8 +17,9 @@ int main(){
         cout << "a est plus grand que b." << endl;
     } else if(a == b){
         cout << "a est egal a b." << endl;
-    } else{ cout << "a est plus petit que b" << endl;}
+    } else{ 
+        cout << "a est plus petit que b" << endl;
+    }
 
-
-    // cin.ignore();
+    cin.ignore();
 }
