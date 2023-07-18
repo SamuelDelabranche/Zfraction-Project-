@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 #include "Zfraction.h"
 using namespace std;
 
@@ -12,7 +13,11 @@ void Zfraction::afficherFraction(ostream &os) const{
     if(this->m_denominateur == 1){
         os << this->m_numerateur;
     } else {
-        os << this->m_numerateur << "/" << this->m_denominateur;
+        if(this->m_numerateur < 0 || this->m_denominateur < 0){
+            os << "-(" << abs(this->m_numerateur) << "/" << abs(this->m_denominateur) << ")"; // abs(), fonction de cmath pour valuer absolue
+        } else {
+            os << this->m_numerateur << "/" << this->m_denominateur;
+        }
     }
 }
 
@@ -111,4 +116,31 @@ void Zfraction::denominateur() const{
 double Zfraction::nombreReel() const{
     double copie(this->m_numerateur);
     return copie/=this->m_denominateur;
+}
+
+// Surchages d'opérateurs - et /
+Zfraction operator-(Zfraction const &a, Zfraction const &b){
+    Zfraction copie(a);
+    copie -= b;
+    return copie;
+}
+Zfraction& Zfraction::operator-=(Zfraction const &objet2){
+    this->m_numerateur = (this->m_numerateur * objet2.m_denominateur) - (this->m_denominateur * objet2.m_numerateur);
+    this->m_denominateur = this->m_denominateur * objet2.m_denominateur;
+
+    simplifier();
+    return *this;
+}
+
+Zfraction operator/(Zfraction const &a, Zfraction const &b){
+    Zfraction copie(a);
+    copie /= b;
+    return copie;
+}
+Zfraction& Zfraction::operator/=(Zfraction const &objet2){
+    this->m_numerateur *= objet2.m_denominateur;
+    this->m_denominateur *= objet2.m_numerateur;
+
+    this->simplifier();
+    return *this;
 }

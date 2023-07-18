@@ -34,6 +34,10 @@ class Zfraction{
         void numerateur() const;
         void denominateur() const; 
         double nombreReel() const; // Affiche la fraction sous nombre reel
+
+        // Surchage d'opérateurs - et /
+        Zfraction &operator-=(Zfraction const &objet2);
+        Zfraction &operator/=(Zfraction const &objet2);
     
 
     private:
@@ -52,5 +56,9 @@ bool operator<(Zfraction const &a, Zfraction const &b); // a inférieur b
 
 bool operator==(Zfraction const &a, Zfraction const &b); // a == b
 bool operator!=(Zfraction const &a, Zfraction const &b); // a != b
+
+// Ajouts annexes
+Zfraction operator-(Zfraction const &a, Zfraction const &b);
+Zfraction operator/(Zfraction const &a, Zfraction const &b);
 
 #endif
