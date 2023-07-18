@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #ifndef DEF_ZFRACTION
 #define DEF_ZFRACTION
 
