@@ -1,9 +1,10 @@
 #include <iostream>
+#include <cmath>
 #include "Zfraction.h"
 using namespace std;
 
 int main(){
-    Zfraction a(4,5); // 4/5
+    Zfraction a(-4,-5); // 4/5
     Zfraction b(2); // 2/1 = 2
     Zfraction c,d,e,f; // 0
 
@@ -32,6 +33,7 @@ int main(){
     cout << b << " = " << b.nombreReel() << endl;
     cout << e << " = " << e.nombreReel() << endl;
     cout << f << " = " << f.nombreReel() << endl;
+
 
     cin.ignore();
 }

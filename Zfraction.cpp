@@ -3,20 +3,18 @@
 #include "Zfraction.h"
 using namespace std;
 
-// Constructeurs 
-Zfraction::Zfraction(): m_numerateur(0), m_denominateur(1){}
-Zfraction::Zfraction(int n): m_numerateur(n), m_denominateur(1){}
-Zfraction::Zfraction(int n, int d): m_numerateur(n), m_denominateur(d){}
+// Constructeur
+Zfraction::Zfraction(int numerateur, int denominateur): m_numerateur(numerateur), m_denominateur(denominateur){}
 
 // Methode operateur << 
 void Zfraction::afficherFraction(ostream &os) const{
     if(this->m_denominateur == 1){
         os << this->m_numerateur;
     } else {
-        if(this->m_numerateur < 0 || this->m_denominateur < 0){
+        if((this->m_numerateur < 0 && this->m_denominateur < 0) || (this->m_numerateur > 0 && this->m_denominateur >0)) {
+            os << abs(this->m_numerateur) << "/" << abs(this->m_denominateur);
+        } else if(this->m_numerateur < 0 || this->m_denominateur < 0){
             os << "-(" << abs(this->m_numerateur) << "/" << abs(this->m_denominateur) << ")"; // abs(), fonction de cmath pour valuer absolue
-        } else {
-            os << this->m_numerateur << "/" << this->m_denominateur;
         }
     }
 }
@@ -57,7 +55,15 @@ Zfraction& Zfraction::operator*=(Zfraction const &objet2){
 
 
 // Simplification 
-int Zfraction::pgcd(int a, int b){ // a = numerateur | b = denominateur
+int Zfraction::pgcd(int a, int b){ 
+    /**
+     * fonction utilisant le principle de "plus grand coefficient directeur"
+     * 
+     * param1 : numérateur de la fraction
+     * param2 : dénominateur de la fraction
+     * 
+     * return : coefficient directeur
+    */
     while(b != 0){
         const int t(b);
         b = a%b;

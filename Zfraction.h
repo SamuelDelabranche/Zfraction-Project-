@@ -2,20 +2,15 @@
 #define DEF_ZFRACTION
 
 #include <iostream>
+#include <cmath>
 
 class Zfraction{
     public:
     // Constructeurs
-        Zfraction();  // constructeur pour c et d
-        Zfraction(int n); // constructeur pour b
-        Zfraction(int n, int d); // constructeur pour a
+        Zfraction(int numerateur = 0, int denominateur = 1);  // constructeur
         
     // Méthode écriture (operateur <<) 
         void afficherFraction(std::ostream &os) const;
-
-    // Simplification fractions
-        int pgcd(int a, int b);
-        void simplifier();
 
     // Méthode addition (operator+ et +=)
         Zfraction &operator+=(Zfraction const &objet2);
@@ -38,11 +33,14 @@ class Zfraction{
         // Surchage d'opérateurs - et /
         Zfraction &operator-=(Zfraction const &objet2);
         Zfraction &operator/=(Zfraction const &objet2);
-    
 
     private:
         int m_numerateur;
         int m_denominateur;
+
+        // Simplification fractions
+        int pgcd(int a, int b);
+        void simplifier();
 };
 std::ostream &operator<<(std::ostream &flux, Zfraction const &objet); // Ecriture
 
